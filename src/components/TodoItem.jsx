@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import {FaTrash} from 'react-icons/fa';
+import {AiFillEdit} from 'react-icons/ai';
 
 const TodoItem = ({
   itemProp, handleChange, delTodo, setUpdate,
@@ -29,8 +31,12 @@ const TodoItem = ({
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button type="submit" onClick={handleEditing}>Edit</button>
-        <button type="submit" onClick={() => delTodo(itemProp.id)}>Delete</button>
+        <button type="submit" onClick={handleEditing}>
+          <AiFillEdit />
+        </button>
+        <button type="submit" onClick={() => delTodo(itemProp.id)}>
+          <FaTrash />
+        </button>
         {itemProp.title}
       </div>
       <input
