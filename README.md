@@ -50,7 +50,7 @@ React.
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://alvaroiporre.github.io/ReactToDoList/dist/)
+- [Live Demo Link](https://alvaroiporre.github.io/ReactToDoList/)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
