@@ -67,12 +67,11 @@ body {
   display: block;
 }
 
-.header h1 {
+header h1 {
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1em;
-  text-transform: lowercase;
   text-align: center;
 }
 
@@ -110,4 +109,14 @@ body {
   padding: 10px;
   border: 1px solid #dfdfdf;
   outline: none;
+}
+
+.check-item,
+.edit-btn,
+.trash-btn {
+  flex-grow: 1;
+}
+
+.text-item {
+  flex-grow: 20;
 }

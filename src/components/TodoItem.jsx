@@ -30,14 +30,15 @@ const TodoItem = ({
           type="checkbox"
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
+          className="check-item"
         />
-        <button type="submit" onClick={handleEditing}>
+        <p className="text-item">{itemProp.title}</p>
+        <button className="edit-btn" type="submit" onClick={handleEditing}>
           <AiFillEdit />
         </button>
-        <button type="submit" onClick={() => delTodo(itemProp.id)}>
+        <button className="trash-btn" type="submit" onClick={() => delTodo(itemProp.id)}>
           <FaTrash />
         </button>
-        {itemProp.title}
       </div>
       <input
         type="text"
