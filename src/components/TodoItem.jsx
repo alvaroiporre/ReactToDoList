@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import {FaTrash} from 'react-icons/fa';
-import {AiFillEdit} from 'react-icons/ai';
+import { FaTrash } from 'react-icons/fa';
+import { AiFillEdit } from 'react-icons/ai';
 
 const TodoItem = ({
   itemProp, handleChange, delTodo, setUpdate,
