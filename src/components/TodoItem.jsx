@@ -1,14 +1,47 @@
-const TodoItem = ({ itemProp, handleChange, delTodo }) => (
-  <li className="item">
-    <div className="content">
+import { useState } from 'react';
+
+const TodoItem = ({
+  itemProp, handleChange, delTodo, setUpdate,
+}) => {
+  const [editing, setEditing] = useState(false);
+  const handleEditing = () => {
+    setEditing(true);
+  };
+  const viewMode = {};
+  const editMode = {};
+  if (editing) {
+    viewMode.display = 'none';
+  } else {
+    editMode.display = 'none';
+  }
+
+  const handleUpdatedDone = (event) => {
+    if (event.key === 'Enter') {
+      setEditing(false);
+    }
+  };
+
+  return (
+    <li className="item">
+      <div className="content" style={viewMode}>
+        <input
+          type="checkbox"
+          checked={itemProp.completed}
+          onChange={() => handleChange(itemProp.id)}
+        />
+        <button type="submit" onClick={handleEditing}>Edit</button>
+        <button type="submit" onClick={() => delTodo(itemProp.id)}>Delete</button>
+        {itemProp.title}
+      </div>
       <input
-        type="checkbox"
-        checked={itemProp.completed}
-        onChange={() => handleChange(itemProp.id)}
+        type="text"
+        value={itemProp.title}
+        className="textInput"
+        style={editMode}
+        onChange={(e) => setUpdate(e.target.value, itemProp.id)}
+        onKeyDown={handleUpdatedDone}
       />
-      <button type="submit" onClick={() => delTodo(itemProp.id)}>Delete</button>
-      {itemProp.title}
-    </div>
-  </li>
-);
+    </li>
+  );
+};
 export default TodoItem;
